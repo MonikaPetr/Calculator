@@ -1,54 +1,77 @@
-var result = 0;
-var action = 0;
+var result = "0";
+var action = "";
+var number = "";
+var operation = "";
 
 window.onload = function() {
     document.getElementById("result").innerHTML = result;
 };
 
-function clear() {
-    result = 0;
+function clearResult() {
+    result = "0"
+    action = result;
     document.getElementById("result").innerHTML = result;
 }
 
-function zero() {
-    var zero = 0;
-    action = " " + zero;
-    document.getElementById("result").innerHTML = action;
+function numberInput(number) {
+
+    if (action == "" || action == 0) {
+        action = number
+        document.getElementById("result").innerHTML = action;
+    } else {
+        action = action + "" + number;
+        document.getElementById("result").innerHTML = action;
+    }
 }
 
-function one() {
-    var one = 1;
-    action = " " + one
-    document.getElementById("result").innerHTML = action;
+function plusNumbers() {
+    result = action;
+    action = "";
+    operation = "plus";
+    document.getElementById("result").innerHTML = "+";
 }
 
-function zero() {
-    var zero = 0;
-    document.getElementById("result").innerHTML = zero;
+function minusNumbers() {
+    result = action;
+    action = "";
+    operation = "minus";
+    document.getElementById("result").innerHTML = "-";
 }
 
-function zero() {
-    var zero = 0;
-    document.getElementById("result").innerHTML = zero;
+function divideNumbers() {
+    result = action;
+    action = "";
+    operation = "divide";
+    document.getElementById("result").innerHTML = "/";
 }
 
-function zero() {
-    var zero = 0;
-    document.getElementById("result").innerHTML = zero;
+function timesNumbers() {
+    result = action;
+    action = "";
+    operation = "times";
+    document.getElementById("result").innerHTML = "*";
 }
 
-function zero() {
-    var zero = 0;
-    document.getElementById("result").innerHTML = zero;
+function showResult() {
+    result = parseFloat(result);
+    if(operation == "plus") {
+        result = parseFloat(result) + parseFloat(action); ///tekstini formata keicia i realiuosius skaicius
+    } 
+    else if (operation == "minus") {
+        result -= parseFloat(action);
+    }
+    else if (operation =="divide") {
+        result /= parseFloat(action);
+    } 
+    else if (operation == "times") {
+        result *= parseFloat(action);
+    } else {
+        result = "0";
+    }
+
+    document.getElementById("result").innerHTML = result;
+    result = action = operation = "";
 }
 
-function zero() {
-    var zero = 0;
-    document.getElementById("result").innerHTML = zero;
-}
 
-function zero() {
-    var zero = 0;
-    document.getElementById("result").innerHTML = zero;
-}
 
