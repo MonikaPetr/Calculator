@@ -27,6 +27,7 @@ function numberInput(number) {
 function plusNumbers() {
     result = action;
     action = "";
+    dots = 0;
     operation = "plus";
     document.getElementById("result").innerHTML = "+";
 }
@@ -34,6 +35,7 @@ function plusNumbers() {
 function minusNumbers() {
     result = action;
     action = "";
+    dots = 0;
     operation = "minus";
     document.getElementById("result").innerHTML = "-";
 }
@@ -41,6 +43,7 @@ function minusNumbers() {
 function divideNumbers() {
     result = action;
     action = "";
+    dots = 0;
     operation = "divide";
     document.getElementById("result").innerHTML = "/";
 }
@@ -48,6 +51,7 @@ function divideNumbers() {
 function timesNumbers() {
     result = action;
     action = "";
+    dots = 0;
     operation = "times";
     document.getElementById("result").innerHTML = "*";
 }
