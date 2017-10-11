@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Calculator</title>
+    <script src="./JS/index.js"></script>
 </head>
 <body>
+
+    <div class="calculator">
+        <div class="row" id="result">
+            0
+        </div>
+        <div class="row">
+            <button type="button" onclick="clear()" name="button">C</button>
+            <button type="button" onclick="divide()" name="button"> / </button>
+            <button type="button" onclick="times()" name="button"> * </button> 
+            <button type="button" onclick="backspace()" name="button"> < </button> 
+        </div>
+        <div class="row">
+            <button type="button" onclick="seven()" name="button">7</button>
+            <button type="button" onclick="eight()" name="button">8</button>
+            <button type="button" onclick="nine()" name="button">9</button> 
+            <button type="button" onclick="minus()" name="button"> - </button> 
+        </div>
+        <div class="row">
+            <button type="button" onclick="four()" name="button">4</button>
+            <button type="button" onclick="five()" name="button">5</button>
+            <button type="button" onclick="six()" name="button">6</button> 
+            <button type="button" onclick="plus()" name="button"> + </button> 
+        </div>
+        <div class="row">
+            <button type="button" onclick="one()" name="button">1</button>
+            <button type="button" onclick="two()" name="button">2</button>
+            <button type="button" onclick="three()" name="button">3</button> 
+            <button type="button" onclick="equal()" name="button"> = </button> 
+        </div>
+        <div class="row">
+            <button type="button" onclick="zero()" name="button">0</button>
+        </div>
+         
+    </div>
     
 </body>
 </html>
