@@ -52,6 +52,29 @@ function timesNumbers() {
     document.getElementById("result").innerHTML = "*";
 }
 
+var dots = 0;
+
+function addDot() {
+    if (dots == 0) {
+        action = action + ".";
+     document.getElementById("result").innerHTML = action;   
+    }
+    dots += 1;
+}
+
+function backspace() {
+    var numberLength = action.length - 1;
+
+    if (numberLength > -1) {
+        action = action.substring(0, numberLength);
+    }
+
+    if (action == "") {
+        action = 0;
+    }
+    document.getElementById("result").innerHTML = action;
+}
+
 function showResult() {
     result = parseFloat(result);
     if(operation == "plus") {
