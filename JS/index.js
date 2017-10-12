@@ -1,6 +1,4 @@
-var result = "0";
-var action = "";
-var number = "";
+var result = lastResult = number = action =  "0";
 var operation = "";
 
 window.onload = function() {
@@ -8,13 +6,15 @@ window.onload = function() {
 };
 
 function clearResult() {
-    result = "0"
-    action = result;
+    result = lastResult = action = "0"
+    dots = 0;
     document.getElementById("result").innerHTML = result;
 }
 
 function numberInput(number) {
-
+    if(digitLimit()) {
+        return false;
+    }
     if (action == "" || action == 0) {
         action = number
         document.getElementById("result").innerHTML = action;
@@ -22,6 +22,15 @@ function numberInput(number) {
         action = action + "" + number;
         document.getElementById("result").innerHTML = action;
     }
+}
+
+function digitLimit() {
+    if(action.length > 8) {
+        alert("pasiektas maksimalus ivesties limitas");
+        return true;
+    }
+
+    return false;
 }
 
 function plusNumbers() {
@@ -80,23 +89,27 @@ function backspace() {
 }
 
 function showResult() {
-    result = parseFloat(result);
-    if(operation == "plus") {
-        result = parseFloat(result) + parseFloat(action); ///tekstini formata keicia i realiuosius skaicius
-    } 
-    else if (operation == "minus") {
-        result -= parseFloat(action);
-    }
-    else if (operation =="divide") {
-        result /= parseFloat(action);
-    } 
-    else if (operation == "times") {
-        result *= parseFloat(action);
-    } else {
-        result = "0";
+    lastResult = parseFloat(lastResult);
+    if(lastResult != "") {
+        result = lastResult;
     }
 
-    document.getElementById("result").innerHTML = result;
+    if(operation == "plus") {
+        lastResult = parseFloat(result) + parseFloat(action); ///tekstini formata keicia i realiuosius skaicius
+    } 
+    else if (operation == "minus") {
+        lastResult = parseFloat(result) - parseFloat(action);
+    }
+    else if (operation =="divide") {
+        lastResult = parseFloat(result) / parseFloat(action);
+    } 
+    else if (operation == "times") {
+        lastResult = reparseFloat(result) * parseFloat(action);
+    } else {
+        lastResult = "0";
+    }
+
+    document.getElementById("result").innerHTML = lastResult;
     result = action = operation = "";
 }
 
