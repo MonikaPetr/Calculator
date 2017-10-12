@@ -95,7 +95,7 @@ function showResult() {
     }
 
     if(operation == "plus") {
-        lastResult = parseFloat(result) + parseFloat(action); ///tekstini formata keicia i realiuosius skaicius
+        lastResult = parseFloat(result) + parseFloat(action);
     } 
     else if (operation == "minus") {
         lastResult = parseFloat(result) - parseFloat(action);
